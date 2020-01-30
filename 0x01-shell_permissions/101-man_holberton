@@ -1,7 +1,8 @@
 .\" Manpage for holberton.
 .TH man 8 "04 May 2015" "0.32" "holberton man page"
 .SH NAME
-holberton \- become a full\-stack software engineer.
+.B holberton
+\- become a full\-stack software engineer.
 .SH SYNOPSIS
 holberton [STUDENTNAME]
 .SH DESCRIPTION
