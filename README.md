@@ -1,3 +1,1 @@
-# holberton-system_engineering-devops
-
-This repository is about shell basics
+# This repository is about Shell basics
