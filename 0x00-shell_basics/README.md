@@ -1,4 +1,4 @@
-# Scripts
+# Scripts Basic commands of Shell
 <h3> About how to use each comand </h3>
 
 1. Command to see the current directory
