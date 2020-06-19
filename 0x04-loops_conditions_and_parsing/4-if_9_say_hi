@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times and in the 9th time
+# prints "hi" on a newline
+i="0"
+while [ $i -lt 10 ]; do
+      echo "Holberton School"
+      i=$((i+1))
+      if [ $i == 9 ]
+      then
+	echo "Hi"
+      fi
+done
