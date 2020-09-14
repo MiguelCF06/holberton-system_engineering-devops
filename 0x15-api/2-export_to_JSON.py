@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
 Using what you did in the task #0, extend your Python script to export data in
-the CSV format.
+the JSON format.
 """
-import csv
+import json
 import requests
 from sys import argv
 
@@ -13,8 +13,15 @@ if __name__ == "__main__":
                         format(user_id)).json()
     todo = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.
                         format(user_id)).json()
-    with open("{}.csv".format(user_id), "w") as f:
-        file_writer = csv.writer(f, quoting=csv.QUOTE_ALL)
-        for task in todo:
-            file_writer.writerow([int(user_id), user.get("name"),
-                                  task.get("completed"), task.get("title")])
+    username = user.get("username")
+    all_tasks = []
+    for task in todo:
+        values_dict = {}
+        values_dict["task"] = task.get("title")
+        values_dict["completed"] = task.get("completed")
+        values_dict["username"] = username
+        all_tasks.append(values_dict)
+    obj = {}
+    obj[user_id] = all_tasks
+    with open("{}.json".format(user_id), "w") as f:
+        json.dump(obj, f)
