@@ -16,6 +16,8 @@ titles of all hot articles for a given subreddit."""
     if after:
         url += '?after={}'.format(after)
     response = requests.get(url, headers={"User-Agent": "miguel_cf"}).json()
+    if response.get("error") == 404:
+        return None
     titles = response.get("data").get("children")
     for article in titles:
         hot_list.append(article.get("data").get("title"))
