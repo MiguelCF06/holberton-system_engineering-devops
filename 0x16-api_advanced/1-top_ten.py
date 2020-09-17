@@ -15,6 +15,9 @@ for a given subreddit."""
     ten_counter = 0
     url = 'http://www.reddit.com/r/{}/hot.json'.format(subreddit)
     response = requests.get(url, headers={"User-Agent": "miguel_cf"}).json()
+    if response.get("error") == 404:
+        print(None)
+        return
     hot_posts = response.get("data").get("children")
     for post in hot_posts:
         print(post.get("data").get("title"))
