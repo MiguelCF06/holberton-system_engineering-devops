@@ -1,8 +1,8 @@
 # Firewall
 
-
-<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/284/V1HjQ1Y.png" width="600" height="400">
-
+<p align="center">
+  <img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/284/V1HjQ1Y.png" width="800" height="600">
+</p>
 ## Tasks
 
 <details>
