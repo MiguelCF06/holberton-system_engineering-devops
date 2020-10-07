@@ -1,0 +1,24 @@
+server {
+        listen 80 default_server;
+	        listen [::]:80 default_server;
+
+        add_header X-Served-By "651-web-01";
+
+        error_page 404 /custom_404.html;
+	        location = /custom_404.html {
+		                root /usr/share/nginx/html;
+				                internal;
+						        }
+
+        location = /airbnb-onepage/ {
+	                proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+			        }
+
+        location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+	                proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+			        }
+
+        rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+
+        server_name _;
+}
